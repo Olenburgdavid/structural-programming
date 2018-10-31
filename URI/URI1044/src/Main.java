@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int A, B, C;
+        A = scan.nextInt();
+        B = scan.nextInt();
+        if (B % A == 0 || A % B == 0) {
+            System.out.println("Sao Multiplos");
+        }else
+            System.out.println("Nao sao Multiplos");
+    }
+}
