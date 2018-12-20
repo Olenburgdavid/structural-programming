@@ -1,32 +1,39 @@
 import processing.core.PApplet;
 
-import javax.swing.*;
-
 public class Main extends PApplet {
 
+    static String N;
 
     float x;
     float y;
-    float n;
+
     public void settings() {
-        fullScreen();
-    }
+        fullScreen();}
+
 
     public void setup() {
+        background(0);
+        int n = Integer.parseInt(N);
+        x = width / 2;
+        y = height / 2;
+        float dcolor = 255/n;
+        for (int i = 0; i < 10; i++) {
+            float color = dcolor + i * dcolor;
+            float r = min(width, height) - i * min(width, height) / n;
+            fill(color, 0, 0);
+            ellipse(x, y, r, r);
+
+
+        }
+
+
         frameRate(100);
 
 
-
     }
 
 
-    public void draw() {
-        background(0);
 
-        for (int i = 0; i < n; i++) {
-            ellipse(random(width), random(height), 50, 50);
-        }
-    }
 
     public static void main(String... args) {
         PApplet.main("Main");
